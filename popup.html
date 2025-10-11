@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Time Tracker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Instagram Tracker</h1>
+        </header>
+        
+        <div id="login-section" class="section">
+            <button id="login-btn" class="btn btn-primary">
+                🔐 Login con Google
+            </button>
+        </div>
+        
+        <div id="stats-section" class="section hidden">
+            <div class="user-info">
+                <span id="user-email"></span>
+                <button id="logout-btn" class="btn btn-secondary">Logout</button>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Tiempo Total</div>
+                        <div id="total-time" class="stat-value">0h 0m</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Tiempo Hoy</div>
+                        <div id="today-time" class="stat-value">0h 0m</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🎬</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Reels Total</div>
+                        <div id="total-reels" class="stat-value">0</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Reels Hoy</div>
+                        <div id="today-reels" class="stat-value">0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="current-session">
+                <div class="session-label">Sesión Actual:</div>
+                <div id="current-session-time" class="session-time">0m 0s</div>
+            </div>
+            
+            <div class="actions-section">
+                <button id="reset-btn" class="btn btn-reset">🗑️ Reset Stats</button>
+            </div>
+        </div>
+        
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <div>Cargando...</div>
+        </div>
+    </div>
+    
+    <script src="firebase/firebase-app.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

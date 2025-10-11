@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Time Tracker",
+  "version": "1.1.0",
+  "description": "Monitor your Instagram usage with detailed time tracking and reel counting statistics",
+  
+  "permissions": [
+    "tabs",
+    "storage",
+    "identity"
+  ],
+  
+  "oauth2": {
+    "client_id": "96739929889-phibo0dd0l8je5168vjbr3l417k58rrk.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  
+  "host_permissions": [
+    "*://*.instagram.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Instagram Time Tracker",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["firebase-config.js"],
+      "matches": ["*://*.instagram.com/*"]
+    }
+  ]
+}
